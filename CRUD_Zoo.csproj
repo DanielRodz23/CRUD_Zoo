@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <Folder Include="Views\AnimalesView\" />
+    <Folder Include="Views\HabitatsView\" />
   </ItemGroup>
 
 </Project>
