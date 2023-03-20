@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CRUD_Zoo.Views;
+
 
 namespace CRUD_Zoo.ViewModels
 {
@@ -20,7 +22,13 @@ namespace CRUD_Zoo.ViewModels
         //Habitat de la clase
         public Habitat habitat { get; set; } = new();
         //Propiedad para controlar las vistas
-        public Accion Operacion { get; set; }
+
+        private Accion operacion;
+        public Accion Operacion
+        {
+            get { return operacion; }
+            set { operacion = value; }
+        }
         //Comandos
         public ICommand CargarhabitatsCommand { get; set; }
         public ICommand VerAgregarCommand { get; set; }

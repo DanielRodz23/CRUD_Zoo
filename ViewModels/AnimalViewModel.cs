@@ -1,5 +1,6 @@
 ﻿using CRUD_Zoo.Catalogos;
 using CRUD_Zoo.Models;
+using CRUD_Zoo.Views;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+
 
 namespace CRUD_Zoo.ViewModels
 {
@@ -27,7 +29,12 @@ namespace CRUD_Zoo.ViewModels
         public ObservableCollection<Animal> listaanimales { get; set; } = new();
 
         //PropiedadControlVistas
-        public Accion Operacion { get; set; }
+        private Accion operacion;
+        public Accion Operacion
+        {
+            get { return operacion; }
+            set { operacion = value; }
+        }
 
         //Propiedad de errores de animal
         public string Error { get; set; }
