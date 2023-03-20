@@ -4,9 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Zoo.Views"
+        xmlns:vm="clr-namespace:CRUD_Zoo.ViewModels"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Window.DataContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:AnimalViewModel}">
+            <local:IndexAnimalesView></local:IndexAnimalesView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HabitatViewModel}">
+            <local:IndexHabitatsView></local:IndexHabitatsView>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                <GradientStop Color="#68B984" Offset="-0.2"></GradientStop>
+                <GradientStop Color="#ADE792" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </DockPanel.Background>
+        <TextBlock Foreground="White" DockPanel.Dock="Top" Height="50" FontWeight="Bold" FontSize="25"  Margin="30,8,0,0">¡Bienvenido!</TextBlock>
+        <StackPanel Margin="5,25,5,0" DockPanel.Dock="Left">
+            <StackPanel>
+                <Button Width="80" Height="80" Background="Transparent" BorderThickness="0">
+                    <Image Width="80" Height="80" Source="/Assets/VerAnimales.png"></Image>
+                    
+                </Button>
+                <Label Foreground="White" Margin="0,-10,0,0" FontSize="10" HorizontalAlignment="Center" FontWeight="SemiBold">Animales</Label>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0">
+                <Button Width="80" Height="80" Background="Transparent" BorderThickness="0">
+                    <Image Width="80" Height="80"  Source="/Assets/VerHabitats.png"></Image>
+                </Button>
+                <Label Foreground="White" Margin="0,-10,0,0" FontSize="10" HorizontalAlignment="Center" FontWeight="SemiBold">Habitats</Label>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0">
+                <Button Width="80" Height="80" Background="Transparent" BorderThickness="0">
+                    <Image Width="80" Height="80"  Source="/Assets/Salir.png"></Image>
+                </Button>
+                <Label Foreground="White" Margin="0,-10,0,0" FontSize="10" HorizontalAlignment="Center" FontWeight="SemiBold">Salir</Label>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Background="White">
+            
+        </StackPanel>
+        <!--<ContentControl Content="{Binding ViewModelActual}">
+        </ContentControl>-->
+    </DockPanel>
 </Window>

@@ -21,7 +21,7 @@ namespace CRUD_Zoo.ViewModels
 
 
         private object viewactual;
-        public object ViewModelAactual
+        public object ViewModelActual
         {
             get { return viewactual; }
             set { viewactual = value; Actualizar(); }
@@ -38,12 +38,12 @@ namespace CRUD_Zoo.ViewModels
 
         private void NavegarHabitat()
         {
-            ViewModelAactual = habitatViewModel;
+            ViewModelActual = habitatViewModel;
         }
 
         private void NavegarAnimal()
         {
-            ViewModelAactual = animalViewModel;
+            ViewModelActual = animalViewModel;
         }
 
         private void Actualizar(string? property = null)

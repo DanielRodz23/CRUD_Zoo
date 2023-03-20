@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="CRUD_Zoo.Views.IndexAnimalesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:views="clr-namespace:CRUD_Zoo.Views.AnimalesView"
+             xmlns:local="clr-namespace:CRUD_Zoo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <views:AnimalesView x:Key="AnimalesView"></views:AnimalesView>
+        <views:RegistrarAnimalView x:Key="RegistrarAnimal"></views:RegistrarAnimalView>
+        <views:EliminarAnimalView x:Key="EliminarAnimal"></views:EliminarAnimalView>
+    </UserControl.Resources>
+    <ContentControl >
+        <ContentControl.Style>
+            <Style TargetType="ContentControl">
+                <Setter Property="Content" Value="{StaticResource AnimalesView}"></Setter>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.VerAnimales}">
+                        <Setter Property="Content" Value="{StaticResource AnimalesView}"></Setter>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.AgregarAnimales}">
+                        <Setter Property="Content" Value="{StaticResource RegistrarAnimal}"></Setter>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Operacion}" Value="{x:Static local:Accion.EliminarAnimales}">
+                        <Setter Property="Content" Value="{StaticResource EliminarAnimal}"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ContentControl.Style>
+    </ContentControl>
+</UserControl>
