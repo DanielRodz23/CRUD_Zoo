@@ -91,6 +91,7 @@ namespace CRUD_Zoo.ViewModels
                     Actualizar();
                 }
             }
+            Error = "";
         }
 
         private void VerAgregar()

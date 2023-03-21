@@ -15,15 +15,15 @@
                         <Border BorderThickness="1"  Padding="10" CornerRadius="10" 
                             Background="WhiteSmoke" Margin="10">
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="50" Opacity=".50"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="20" Opacity=".20"></DropShadowEffect>
                             </Border.Effect>
                             <StackPanel>
-                                <TextBlock FontSize="20" FontWeight="SemiBold" Text="{Binding Nombre}" Foreground="#03C988"></TextBlock>
-                                <TextBlock ><Run FontWeight="DemiBold">Peso:</Run> <Run  Text="{Binding Peso}"></Run> 
-                                    <Run>kg</Run>
+                                <TextBlock FontSize="30" FontWeight="SemiBold" Text="{Binding Nombre}" Foreground="#03C988"></TextBlock>
+                                <TextBlock ><Run FontWeight="DemiBold" FontSize="15">Peso:</Run> <Run FontSize="15"  Text="{Binding Peso}"></Run> 
+                                    <Run FontSize="15">kg</Run>
                                 </TextBlock>
-                                <TextBlock><Run  FontWeight="DemiBold">Alimentación:</Run><Run Text=" "></Run><Run Text="{Binding TipoAlimentacion}"></Run></TextBlock>
-                                <TextBlock><Run  FontWeight="DemiBold">Nivel de Extinción: </Run><Run Text=" "></Run><Run Text="{Binding NivelPeligroDeExtincion}"></Run></TextBlock>
+                                <TextBlock><Run  FontWeight="DemiBold" FontSize="15">Alimentación:</Run><Run Text=" "></Run><Run FontSize="15" Text="{Binding TipoAlimentacion}"></Run></TextBlock>
+                                <TextBlock><Run FontSize="15"  FontWeight="DemiBold">Nivel de Extinción: </Run><Run Text=" "></Run><Run FontSize="15" Text="{Binding NivelPeligroDeExtincion}"></Run></TextBlock>
                                 <Button Command="{Binding Source={x:Reference verAnimales}, 
                                     Path=DataContext.VerEliminarCommand}" 
                                            CommandParameter="{Binding Id}" Margin="-15,-10,0,-40" Background="Transparent" BorderThickness="0" Height="30" HorizontalAlignment="Left">

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CRUD_Zoo.Views" 
         xmlns:vm="clr-namespace:CRUD_Zoo.ViewModels"
         mc:Ignorable="d"
-        Title="MainView" Height="600" Width="800">
+        Title="Zoológico Central Park" MinHeight="720" MinWidth="1280" Height="600" Width="800" WindowState="Maximized" ResizeMode="NoResize">
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
@@ -22,39 +22,39 @@
     <DockPanel>
         <DockPanel.Background>
             <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
-                <GradientStop Color="#68B984" Offset="-0.2"></GradientStop>
+                <GradientStop Color="#68B984" Offset="0.4"></GradientStop>
                 <GradientStop Color="#ADE792" Offset="1"></GradientStop>
             </LinearGradientBrush>
         </DockPanel.Background>
         <WrapPanel DockPanel.Dock="Top">
-        <TextBlock Width="150" HorizontalAlignment="Left" Foreground="White" DockPanel.Dock="Top" Height="50" FontWeight="Bold" FontSize="25"  Margin="30,8,-10,0">Zoológico</TextBlock>
-            <Image Margin="-100,-13,0,0" HorizontalAlignment="Right" Source="/Assets/Lianas.png" Height="70" Width="100"></Image>
-            <Image Height="70"  Margin="120,-9,0,0" Source="/Assets/Lianas_Techo.png"></Image>
+            <TextBlock Width="240" HorizontalAlignment="Left" Foreground="#483838" DockPanel.Dock="Top" Height="50" FontWeight="Bold" FontSize="40"  Margin="30,-10,-10,0">Central Park</TextBlock>
+            <Image Margin="-100,-13,0,0" HorizontalAlignment="Right" Source="/Assets/Lianas.png" Height="70" Width="80"></Image>
+            <Image Height="70"  Margin="500,-8,0,0" Source="/Assets/Lianas_Techo.png"></Image>
         </WrapPanel>
         <StackPanel Margin="5,25,5,0" DockPanel.Dock="Left">
             <StackPanel>
                 <Button Width="80" Height="90" Background="Transparent" BorderThickness="0" Command="{Binding NavegarAnimalCommand}">
                     <StackPanel>
-                        <Image Width="80" Height="80" Source="/Assets/VerAnimales.png"></Image>
-                        <Label Foreground="White" Margin="0,-10,0,0" FontSize="10" HorizontalAlignment="Center" FontWeight="SemiBold">Animales</Label>
+                        <Image Width="80" Height="70" Margin="0,0,0,5" Source="/Assets/AnimalesPrincipal.png"></Image>
+                        <Label Foreground="#483838" Margin="0,-12,0,0" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold">Animales</Label>
 
                     </StackPanel>
                     
                 </Button>
             </StackPanel>
-            <StackPanel Margin="0,10,0,0">
+            <StackPanel Margin="0,30,0,0">
                 <Button Width="80" Height="90" Background="Transparent" BorderThickness="0" Command="{Binding NavegarHabitatCommand}">
                     <StackPanel>
-                    <Image Width="80" Height="80"  Source="/Assets/VerHabitats.png"></Image>
-                        <Label Foreground="White" Margin="0,-10,0,0" FontSize="10" HorizontalAlignment="Center" FontWeight="SemiBold">Habitats</Label>
+                        <Image Width="80" Height="70" Margin="0,0,0,5"  Source="/Assets/HabitatPrincipal.png"></Image>
+                        <Label Foreground="#483838" Margin="0,-12,0,0" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold">Habitats</Label>
                     </StackPanel>
                 </Button>
             </StackPanel>
-            <StackPanel Margin="0,10,0,0">
+            <StackPanel Margin="0,30,0,0">
                 <Button Width="80" Height="90" Background="Transparent" BorderThickness="0" Click="Button_Click">
                     <StackPanel>
-                        <Image Width="80" Height="80"  Source="/Assets/Salir.png"></Image>
-                        <Label Foreground="White" Margin="0,-10,0,0" FontSize="10" HorizontalAlignment="Center" FontWeight="SemiBold">Salir</Label>
+                        <Image Width="80" Height="70" Margin="0,0,0,5"  Source="/Assets/SalirPrincipal.png"></Image>
+                        <Label Foreground="#483838" Margin="0,-12,0,0" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold">Salir</Label>
 
                     </StackPanel>
                 </Button>

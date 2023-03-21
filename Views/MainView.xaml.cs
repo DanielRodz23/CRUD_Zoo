@@ -28,5 +28,11 @@ namespace CRUD_Zoo.Views
         {
             this.Close();
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           
+
+        }
     }
 }

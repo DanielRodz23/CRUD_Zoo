@@ -11,12 +11,15 @@
     <None Remove="Assets\Advertencia.png" />
     <None Remove="Assets\AgregarAnimal.png" />
     <None Remove="Assets\AgregarHabitat.png" />
+    <None Remove="Assets\AnimalesPrincipal.png" />
     <None Remove="Assets\Cancelar.png" />
     <None Remove="Assets\Eliminar.png" />
     <None Remove="Assets\Guardar.png" />
+    <None Remove="Assets\HabitatPrincipal.png" />
     <None Remove="Assets\Lianas.png" />
     <None Remove="Assets\Lianas_Techo.png" />
     <None Remove="Assets\Salir.png" />
+    <None Remove="Assets\SalirPrincipal.png" />
     <None Remove="Assets\VerAnimales.png" />
     <None Remove="Assets\VerHabitats.png" />
   </ItemGroup>
@@ -41,6 +44,9 @@
     <Resource Include="Assets\AgregarHabitat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\AnimalesPrincipal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Cancelar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -50,6 +56,9 @@
     <Resource Include="Assets\Guardar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\HabitatPrincipal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Lianas.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -57,6 +66,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Salir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\SalirPrincipal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\VerAnimales.png">

@@ -15,15 +15,15 @@
                         <Border BorderThickness="1"  Padding="10" CornerRadius="10" 
                             Background="WhiteSmoke" Margin="10">
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="50" Opacity=".50"></DropShadowEffect>
+                                <DropShadowEffect BlurRadius="20" Opacity=".20"></DropShadowEffect>
                             </Border.Effect>
                             <StackPanel>
-                                <TextBlock Margin="0,0,0,2" FontSize="20" FontWeight="SemiBold" Text="{Binding Nombre}" Foreground="#483838"></TextBlock>
-                                <TextBlock Margin="0,0,0,2"><Run FontWeight="DemiBold">Tipo:</Run> <Run  Text="{Binding TipoHabitat}"></Run> 
+                                <TextBlock Margin="0,0,0,2" FontSize="25" FontWeight="SemiBold" Text="{Binding Nombre}" Foreground="#483838"></TextBlock>
+                                <TextBlock Margin="0,0,0,2"><Run FontWeight="DemiBold" FontSize="15">Tipo:</Run> <Run FontSize="15"  Text="{Binding TipoHabitat}"></Run> 
                                 </TextBlock>
-                                <TextBlock Margin="0,0,0,2"><Run  FontWeight="DemiBold">Capacidad:</Run><Run Text=" "></Run><Run Text="{Binding Capacidad}"></Run></TextBlock>
-                                <TextBlock Margin="0,0,0,2"><Run  FontWeight="DemiBold">Vegetación: </Run><Run Text=" "></Run><Run Text="{Binding Vegetacion}"></Run></TextBlock>
-                                <TextBlock><Run  FontWeight="DemiBold">Tamaño (m²):</Run><Run Text=" "></Run><Run Text="{Binding Tamano,StringFormat=0.00}"></Run></TextBlock>
+                                <TextBlock Margin="0,0,0,2"><Run  FontWeight="DemiBold" FontSize="15">Capacidad:</Run><Run FontSize="15" Text=" "></Run><Run FontSize="15" Text="{Binding Capacidad}"></Run></TextBlock>
+                                <TextBlock Margin="0,0,0,2"><Run  FontWeight="DemiBold" FontSize="15">Vegetación: </Run><Run Text=" "></Run><Run FontSize="15" Text="{Binding Vegetacion}"></Run></TextBlock>
+                                <TextBlock><Run FontSize="15"  FontWeight="DemiBold">Tamaño (m²):</Run><Run Text=" "></Run><Run FontSize="15" Text="{Binding Tamano,StringFormat=0.00}"></Run></TextBlock>
                                 <Button Command="{Binding Source={x:Reference verHabitats}, 
                                     Path=DataContext.VerEliminarCommand}" 
                                            CommandParameter="{Binding Id}" Margin="-15,-10,0,-40" Background="Transparent" BorderThickness="0" Height="30" HorizontalAlignment="Left">
