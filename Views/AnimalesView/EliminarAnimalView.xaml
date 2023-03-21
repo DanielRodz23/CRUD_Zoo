@@ -7,18 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <Border Background="#03C988" BorderBrush="Red" CornerRadius="30">
+        <Border Background="#03C988" Margin="0,10,0,0" Height="55"  CornerRadius="20" Width="300" >
             <Label Height="60" FontSize="30" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,0,0,10">Eliminar animal</Label>
         </Border>
         <WrapPanel>
             <Image Width="60" VerticalAlignment="Center" Margin="10,0,-5,40" Source="/Assets/Advertencia.png"></Image>
-        <TextBlock FontSize="25" Margin="0,20,0,60" Padding="10" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap">¿Estas seguro que deseas eliminar al animal <Run Text=""></Run><Run>?</Run></TextBlock>
+        <TextBlock FontSize="25" Margin="0,20,0,60" Padding="10" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap">¿Estas seguro que deseas eliminar al animal <Run Text="{Binding Animal.Nombre}"></Run><Run>?</Run></TextBlock>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
-            <Button Background="Transparent" BorderThickness="0" Height="70" Margin="0,0,20,0">
+            <Button Command="{Binding EliminarAnimalCommand}" Background="Transparent" BorderThickness="0" Height="70" Margin="0,0,20,0">
                 <Image Source="/Assets/Guardar.png"></Image>
             </Button>
-            <Button Background="Transparent" BorderThickness="0" Height="70" Margin="20,0,0,0">
+            <Button Command="{Binding RegresarCommand}" Background="Transparent" BorderThickness="0" Height="70" Margin="20,0,0,0">
                 <Image Source="/Assets/Cancelar.png"></Image>
             </Button>
         </WrapPanel>

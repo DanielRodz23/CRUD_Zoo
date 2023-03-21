@@ -31,6 +31,7 @@ namespace CRUD_Zoo.ViewModels
         //Constructor
         public MainViewModel()
         {
+            ViewModelActual = animalViewModel;
             NavegarAnimalCommand = new RelayCommand(NavegarAnimal);
             NavegarHabitatCommand = new RelayCommand(NavegarHabitat);
 

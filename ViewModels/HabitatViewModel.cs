@@ -96,7 +96,7 @@ namespace CRUD_Zoo.ViewModels
         private void VerAgregar()
         {
             habitat = new Habitat();
-            Operacion = Accion.VerHabitats;
+            Operacion = Accion.AgregarHabitats;
             Actualizar();
         }
 

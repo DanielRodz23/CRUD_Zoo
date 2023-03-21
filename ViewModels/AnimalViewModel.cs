@@ -50,6 +50,7 @@ namespace CRUD_Zoo.ViewModels
         //Constructor
         public AnimalViewModel()
         {
+            CargarAnimales();
             CargarHabitats();
             FiltrarAnimalesPorHabitatCommand = new RelayCommand(VerAnimalesXHabitat);
             VerAgregarAnimalCommand = new RelayCommand(VerAgregarAnimal);
@@ -63,11 +64,23 @@ namespace CRUD_Zoo.ViewModels
         {
             listahabitats.Clear();
             var proye = habitatCatalogo.GetAllHabitats();
+            foreach (var item in proye)
+            {
+                listahabitats.Add(item);
+
+            }
+            Actualizar();
+        }
+
+        private void CargarAnimales()
+        {
+            listaanimales.Clear();
+            var proye = animalCatalogo.GetAllAnimales();
             if (proye != null)
             {
                 foreach (var item in proye)
                 {
-                    listahabitats.Add(item);
+                    listaanimales.Add(item);
                 }
             }
         }
@@ -77,6 +90,7 @@ namespace CRUD_Zoo.ViewModels
             if (Animal is not null)
             {
                 animalCatalogo.Delete(Animal);
+                CargarAnimales();
                 Regresar();
             }
         }

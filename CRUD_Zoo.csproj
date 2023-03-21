@@ -9,8 +9,13 @@
 
   <ItemGroup>
     <None Remove="Assets\Advertencia.png" />
+    <None Remove="Assets\AgregarAnimal.png" />
+    <None Remove="Assets\AgregarHabitat.png" />
     <None Remove="Assets\Cancelar.png" />
+    <None Remove="Assets\Eliminar.png" />
     <None Remove="Assets\Guardar.png" />
+    <None Remove="Assets\Lianas.png" />
+    <None Remove="Assets\Lianas_Techo.png" />
     <None Remove="Assets\Salir.png" />
     <None Remove="Assets\VerAnimales.png" />
     <None Remove="Assets\VerHabitats.png" />
@@ -30,10 +35,25 @@
     <Resource Include="Assets\Advertencia.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\AgregarAnimal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\AgregarHabitat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Cancelar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Eliminar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Guardar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Lianas.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Lianas_Techo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Salir.png">

@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:CRUD_Zoo.Views.AnimalesView"
              xmlns:local="clr-namespace:CRUD_Zoo.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <UserControl.Resources>
         <views:AnimalesView x:Key="AnimalesView"></views:AnimalesView>
         <views:RegistrarAnimalView x:Key="RegistrarAnimal"></views:RegistrarAnimalView>
