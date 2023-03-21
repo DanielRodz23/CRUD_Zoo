@@ -20,7 +20,7 @@ namespace CRUD_Zoo.ViewModels
         //Lista Hbabitats
         public ObservableCollection<Habitat> listahabitats { get; set; } = new();
         //Habitat de la clase
-        public Habitat habitat { get; set; } = new();
+        public Habitat Habitat { get; set; } = new();
         //Propiedad para controlar las vistas
 
         private Accion operacion;
@@ -52,10 +52,10 @@ namespace CRUD_Zoo.ViewModels
 
         private void EliminarHabitat()
         {
-            if (habitat is not null)
+            if (Habitat is not null)
             {
 
-                catalogo.Delete(habitat);
+                catalogo.Delete(Habitat);
                 Regresar();
 
             }
@@ -63,7 +63,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void VerEliminar(int id)
         {
-            habitat = catalogo.GetHabitatXId(id);
+            Habitat = catalogo.GetHabitatXId(id);
             Operacion = Accion.EliminarHabitats;
             Actualizar();
         }
@@ -77,9 +77,9 @@ namespace CRUD_Zoo.ViewModels
         private void AgregarHabitat()
         {
             Error = null;
-            if (catalogo.Validar(habitat, out List<string> lista))
+            if (catalogo.Validar(Habitat, out List<string> lista))
             {
-                catalogo.Create(habitat);
+                catalogo.Create(Habitat);
                 CargarHabitats();
                 Regresar();
             }
@@ -96,7 +96,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void VerAgregar()
         {
-            habitat = new Habitat();
+            Habitat = new Habitat();
             Operacion = Accion.AgregarHabitats;
             Actualizar();
         }

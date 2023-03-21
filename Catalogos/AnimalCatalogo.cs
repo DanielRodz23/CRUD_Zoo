@@ -45,8 +45,11 @@ namespace CRUD_Zoo.Catalogos
             if (a is not null)
             {
                 var hab = HayCapacidadEnHabitat(a);
-                if (hab.Capacidad == 0)
-                    lista.Add($"No hay capacidad en el habitat: {hab.Nombre}");
+                if (hab != null)
+                {
+                    if (hab.Capacidad == 0)
+                        lista.Add($"No hay capacidad en el habitat: {hab.Nombre}");
+                }
                 if (string.IsNullOrWhiteSpace(a.Nombre))
                     lista.Add("El nombre no puede quedar vacío");
                 if (a.IdHabitat == null)
@@ -57,6 +60,8 @@ namespace CRUD_Zoo.Catalogos
                     lista.Add("El peso no debe quedar vacío");
                 if (string.IsNullOrWhiteSpace(a.TipoAlimentacion))
                     lista.Add("El tipo de alumentación no puede quedar vacío");
+                if (a.IdHabitat==0)
+                    lista.Add("El campo de habitat no puede quedar sin seleccionar");
             }
             return lista.Count == 0;
         }
