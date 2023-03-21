@@ -35,17 +35,28 @@ namespace CRUD_Zoo.Catalogos
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spEliminarAnimal({a.Id});");
             contenedor.SaveChanges();
         }
+        private Habitat HayCapacidadEnHabitat(Animal a)
+        {
+            return contenedor.Habitat.Where(x => x.Id == a.IdHabitat).FirstOrDefault();
+        }
         public bool Validar(Animal a, out List<string> lista)
         {
             lista = new List<string>();
             if (a is not null)
             {
+                var hab = HayCapacidadEnHabitat(a);
+                if (hab.Capacidad == 0)
+                    lista.Add($"No hay capacidad en el habitat: {hab.Nombre}");
                 if (string.IsNullOrWhiteSpace(a.Nombre))
                     lista.Add("El nombre no puede quedar vacío");
                 if (a.IdHabitat == null)
                     lista.Add("El debe elegir un hábitat");
                 if (string.IsNullOrWhiteSpace(a.NivelPeligroDeExtincion))
                     lista.Add("Debe elegir la amenaza de extinción que corre el animal");
+                if (a.Peso is null)
+                    lista.Add("El peso no debe quedar vacío");
+                if (string.IsNullOrWhiteSpace(a.TipoAlimentacion))
+                    lista.Add("El tipo de alumentación no puede quedar vacío");
             }
             return lista.Count == 0;
         }
