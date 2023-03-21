@@ -76,7 +76,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void AgregarHabitat()
         {
-            Error = null;
+            Error = "";
             if (catalogo.Validar(Habitat, out List<string> lista))
             {
                 catalogo.Create(Habitat);
@@ -91,7 +91,7 @@ namespace CRUD_Zoo.ViewModels
                     Actualizar();
                 }
             }
-            Error = "";
+            
         }
 
         private void VerAgregar()
@@ -101,7 +101,7 @@ namespace CRUD_Zoo.ViewModels
             Actualizar();
         }
 
-        private void CargarHabitats()
+        public void CargarHabitats()
         {
             listahabitats.Clear();
             var proye = catalogo.GetAllHabitats();

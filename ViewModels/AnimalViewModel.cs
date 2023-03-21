@@ -60,7 +60,7 @@ namespace CRUD_Zoo.ViewModels
             RegresarCommand = new RelayCommand(Regresar);
         }
 
-        private void CargarHabitats()
+        public void CargarHabitats()
         {
             listahabitats.Clear();
             var proye = habitatCatalogo.GetAllHabitats();
@@ -72,7 +72,7 @@ namespace CRUD_Zoo.ViewModels
             Actualizar();
         }
 
-        private void CargarAnimales()
+        public void CargarAnimales()
         {
             listaanimales.Clear();
             var proye = animalCatalogo.GetAllAnimales();
@@ -115,7 +115,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void AgregarAnimal()
         {
-            Error = null;
+            Error = "";
             if (animalCatalogo.Validar(Animal, out List<string> lista))
             {
                 animalCatalogo.Create(Animal);
@@ -130,12 +130,11 @@ namespace CRUD_Zoo.ViewModels
                     Actualizar();
                 }
             }
-            Error = "";
         }
 
         private void VerAgregarAnimal()
         {
-            Animal = new Animal();
+            Animal = new Animal() { NivelPeligroDeExtincion = "Peligro crítico"};
             Operacion = Accion.AgregarAnimales;
             Actualizar();
         }

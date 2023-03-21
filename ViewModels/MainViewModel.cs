@@ -39,12 +39,17 @@ namespace CRUD_Zoo.ViewModels
 
         private void NavegarHabitat()
         {
+            habitatViewModel.CargarHabitats();
             ViewModelActual = habitatViewModel;
+            Actualizar();
         }
 
         private void NavegarAnimal()
         {
+            animalViewModel.CargarAnimales();
+            animalViewModel.CargarHabitats();
             ViewModelActual = animalViewModel;
+            Actualizar();
         }
 
         private void Actualizar(string? property = null)
