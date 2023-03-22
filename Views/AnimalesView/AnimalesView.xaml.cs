@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CRUD_Zoo.ViewModels;
 
 namespace CRUD_Zoo.Views.AnimalesView
 {
@@ -23,6 +24,16 @@ namespace CRUD_Zoo.Views.AnimalesView
         public AnimalesView()
         {
             InitializeComponent();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var vw = this.DataContext as AnimalViewModel;
+            if(vw != null)
+            {
+                vw.FiltrarAnimalesPorHabitatCommand.Execute(null);
+            }
+
         }
     }
 }

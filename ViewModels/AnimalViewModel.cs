@@ -46,6 +46,7 @@ namespace CRUD_Zoo.ViewModels
         public ICommand VerEliminarCommand { get; set; }
         public ICommand EliminarAnimalCommand { get; set; }
         public ICommand RegresarCommand { get; set; }
+        public ICommand DeshacerFiltroCommand { get; set; }
 
         //Constructor
         public AnimalViewModel()
@@ -58,6 +59,13 @@ namespace CRUD_Zoo.ViewModels
             VerEliminarCommand = new RelayCommand<int>(VerEliminar);
             EliminarAnimalCommand = new RelayCommand(EliminarAnimal);
             RegresarCommand = new RelayCommand(Regresar);
+            DeshacerFiltroCommand = new RelayCommand(DeshacerFiltro);
+        }
+
+        private void DeshacerFiltro()
+        {
+            CargarAnimales();
+            Actualizar();
         }
 
         public void CargarHabitats()

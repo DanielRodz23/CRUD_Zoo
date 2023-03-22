@@ -12,8 +12,8 @@
             <ItemsControl ItemsSource="{Binding listahabitats}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderThickness="1"  Padding="10" CornerRadius="10" 
-                            Background="WhiteSmoke" Margin="10">
+                        <Border Width="1200" HorizontalAlignment="Left" BorderThickness="1"  Padding="10" CornerRadius="10" 
+                            Background="WhiteSmoke" Margin="20">
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="20" Opacity=".20"></DropShadowEffect>
                             </Border.Effect>
