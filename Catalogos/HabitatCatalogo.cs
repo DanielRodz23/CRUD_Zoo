@@ -37,12 +37,25 @@ namespace CRUD_Zoo.Catalogos
             lista = new List<string>();
             if (a is not null)
             {
+                string patron = @"^[a-zA-ZñÑ\s]+$";
+                if (a.Nombre is not null)
+                {
+                    if (!Regex.IsMatch(a.Nombre, patron))
+                        lista.Add("El nombre solo debe contener letras y/o espacios");
+                }
                 if (string.IsNullOrWhiteSpace(a.Nombre))
                     lista.Add("El nombre no puede quedar vacío");
                 if (string.IsNullOrWhiteSpace(a.TipoHabitat))
                     lista.Add("El tipo de hábitat no puede quedar vacío");
                 if (a.Capacidad == 0)
-                    lista.Add("La capacidad no puede ser 0");
+                    lista.Add("La capacidad no puede ser 0 o quedar vacía");
+                if (string.IsNullOrWhiteSpace(a.Vegetacion))
+                    lista.Add("La vegetación no puede quedar vacía");
+                if (a.Tamano is null)
+                    lista.Add("El tamaño no puede quedar vacío");
+                if (a.Tamano == 0)
+                    lista.Add("El valor de tamaño no puede ser 0");
+
             }
             return lista.Count == 0;
         }

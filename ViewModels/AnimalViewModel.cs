@@ -135,7 +135,7 @@ namespace CRUD_Zoo.ViewModels
         private void VerAgregarAnimal()
         {
             Error = "";
-            Animal = new Animal() { NivelPeligroDeExtincion = "Peligro crítico"};
+            Animal = new Animal();
             Operacion = Accion.AgregarAnimales;
             Actualizar();
         }

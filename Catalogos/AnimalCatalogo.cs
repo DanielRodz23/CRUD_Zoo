@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CRUD_Zoo.Catalogos
@@ -13,7 +14,7 @@ namespace CRUD_Zoo.Catalogos
         ZoologicoContext contenedor = new ZoologicoContext();
         public IEnumerable<Animal> GetAllAnimales()
         {
-            return contenedor.Animal.OrderBy(x=>x.Nombre);
+            return contenedor.Animal.OrderBy(x => x.Nombre);
         }
         public Animal GetAnimalXId(int id)
         {
@@ -24,12 +25,12 @@ namespace CRUD_Zoo.Catalogos
         {
             return GetAllAnimales().Where(x => x.IdHabitat == a.Id);
         }
-        public void Create (Animal a)
+        public void Create(Animal a)
         {
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spAgregarAnimal({a.IdHabitat}, '{a.Nombre}', {a.Peso}, '{a.TipoAlimentacion}', '{a.NivelPeligroDeExtincion}');");
             contenedor.SaveChanges();
         }
-        public void Delete (Animal a)
+        public void Delete(Animal a)
         {
             //call zoologico.spEliminarAnimal(5);
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spEliminarAnimal({a.Id});");
@@ -44,6 +45,12 @@ namespace CRUD_Zoo.Catalogos
             lista = new List<string>();
             if (a is not null)
             {
+                string patron = @"^[a-zA-ZñÑ\s]+$";
+                if (a.Nombre is not null)
+                {
+                    if (!Regex.IsMatch(a.Nombre, patron))
+                        lista.Add("El nombre solo debe contener letras y/o espacios");
+                }
                 var hab = HayCapacidadEnHabitat(a);
                 if (hab != null)
                 {
@@ -58,9 +65,11 @@ namespace CRUD_Zoo.Catalogos
                     lista.Add("Debe elegir la amenaza de extinción que corre el animal");
                 if (a.Peso is null)
                     lista.Add("El peso no debe quedar vacío");
+                if (a.Peso ==0)
+                    lista.Add("El peso no debe quedar en 0");
                 if (string.IsNullOrWhiteSpace(a.TipoAlimentacion))
                     lista.Add("El tipo de alumentación no puede quedar vacío");
-                if (a.IdHabitat==0)
+                if (a.IdHabitat == 0)
                     lista.Add("El campo de habitat no puede quedar sin seleccionar");
             }
             return lista.Count == 0;
