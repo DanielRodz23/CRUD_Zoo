@@ -12,11 +12,7 @@ namespace CRUD_Zoo.Catalogos
     public class AnimalCatalogo
     {
         ZoologicoContext contenedor = new ZoologicoContext();
-        //public AnimalCatalogo()
-        //{
-        //    var result = contenedor.Animal.AsNoTracking().ToList();
-
-        //}
+        
 
         public IEnumerable<Animal> GetAllAnimales()
         {
