@@ -12,6 +12,12 @@ namespace CRUD_Zoo.Catalogos
     public class AnimalCatalogo
     {
         ZoologicoContext contenedor = new ZoologicoContext();
+        //public AnimalCatalogo()
+        //{
+        //    var result = contenedor.Animal.AsNoTracking().ToList();
+
+        //}
+
         public IEnumerable<Animal> GetAllAnimales()
         {
             return contenedor.Animal.OrderBy(x => x.Nombre);
@@ -27,6 +33,7 @@ namespace CRUD_Zoo.Catalogos
         }
         public void Create(Animal a)
         {
+            
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spAgregarAnimal({a.IdHabitat}, '{a.Nombre}', {a.Peso}, '{a.TipoAlimentacion}', '{a.NivelPeligroDeExtincion}');");
             contenedor.SaveChanges();
         }
