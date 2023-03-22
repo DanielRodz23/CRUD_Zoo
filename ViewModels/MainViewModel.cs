@@ -39,6 +39,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void NavegarHabitat()
         {
+            habitatViewModel = new();
             habitatViewModel.CargarHabitats();
             ViewModelActual = habitatViewModel;
             Actualizar();

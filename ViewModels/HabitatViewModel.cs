@@ -27,7 +27,10 @@ namespace CRUD_Zoo.ViewModels
         public Accion Operacion
         {
             get { return operacion; }
-            set { operacion = value; }
+            set { 
+                operacion = value;
+                
+            }
         }
         //Comandos
         public ICommand CargarhabitatsCommand { get; set; }
@@ -104,6 +107,8 @@ namespace CRUD_Zoo.ViewModels
         public void CargarHabitats()
         {
             listahabitats.Clear();
+            listahabitats = new();
+
             var proye = catalogo.GetAllHabitats();
             foreach (var item in proye)
             {

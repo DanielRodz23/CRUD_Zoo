@@ -16,9 +16,9 @@ namespace CRUD_Zoo.Catalogos
 
         public IEnumerable<Animal> GetAllAnimales()
         {
-            return contenedor.Animal.OrderBy(x => x.Nombre);
+            return contenedor.Animal.Include(x=>x.IdHabitatNavigation).OrderBy(x => x.Nombre);
         }
-        public Animal GetAnimalXId(int id)
+        public Animal? GetAnimalXId(int id)
         {
             return contenedor.Animal.FirstOrDefault(x => x.Id == id);
 

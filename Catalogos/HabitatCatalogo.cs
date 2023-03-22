@@ -15,9 +15,22 @@ namespace CRUD_Zoo.Catalogos
 
         public IEnumerable<Habitat> GetAllHabitats()
         {
-            return contenedor.Habitat.OrderBy(x => x.Nombre);
+            var a= contenedor.Habitat.Include(x=>x.Animal).OrderBy(x => x.Nombre);
+
+            return a;
         }
-        public Habitat GetHabitatXId(int id)
+        public void ActualizaHabitat(int id)
+        {
+            var a = contenedor.Habitat.FirstOrDefault(x=>x.Id==id);
+            if (a == null)
+            {
+                a.Capacidad--;
+                contenedor.Habitat.Update(a);
+                contenedor.SaveChanges();
+            }
+        }
+
+        public Habitat? GetHabitatXId(int id)
         {
             return contenedor.Habitat.FirstOrDefault(x=>x.Id==id);
 

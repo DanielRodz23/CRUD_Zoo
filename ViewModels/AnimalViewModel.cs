@@ -127,7 +127,8 @@ namespace CRUD_Zoo.ViewModels
             if (animalCatalogo.Validar(Animal, out List<string> lista))
             {
                 animalCatalogo.Create(Animal);
-                CargarAnimales();
+                //ActualizarTablaHabitat();
+                habitatCatalogo.ActualizaHabitat(Animal.IdHabitat);
                 Regresar();
             }
             else

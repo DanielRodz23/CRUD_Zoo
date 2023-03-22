@@ -49,7 +49,7 @@
         <Label Style="{StaticResource datos}">Tipo de alimentación:</Label>
         <TextBox Text="{Binding Animal.TipoAlimentacion}"></TextBox>
         <Label Style="{StaticResource datos}">Nivel de peligro de extinción:</Label>
-        <ComboBox SelectedItem="{Binding Animal.NivelPeligroDeExtincion}">
+        <ComboBox Text="{Binding Animal.NivelPeligroDeExtincion}">
             <ComboBoxItem>Bajo</ComboBoxItem>
             <ComboBoxItem>Medio</ComboBoxItem>
             <ComboBoxItem>Alto</ComboBoxItem>
