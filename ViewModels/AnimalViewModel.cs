@@ -119,7 +119,7 @@ namespace CRUD_Zoo.ViewModels
             if (animalCatalogo.Validar(Animal, out List<string> lista))
             {
                 animalCatalogo.Create(Animal);
-                VerAnimalesXHabitat();
+                CargarAnimales();
                 Regresar();
             }
             else
@@ -134,6 +134,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void VerAgregarAnimal()
         {
+            Error = "";
             Animal = new Animal() { NivelPeligroDeExtincion = "Peligro crítico"};
             Operacion = Accion.AgregarAnimales;
             Actualizar();
