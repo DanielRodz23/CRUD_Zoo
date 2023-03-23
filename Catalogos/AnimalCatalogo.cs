@@ -31,12 +31,15 @@ namespace CRUD_Zoo.Catalogos
         {
             
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spAgregarAnimal({a.IdHabitat}, '{a.Nombre}', {a.Peso}, '{a.TipoAlimentacion}', '{a.NivelPeligroDeExtincion}');");
+            contenedor.Entry(a).Reload();
             contenedor.SaveChanges();
         }
         public void Delete(Animal a)
         {
             //call zoologico.spEliminarAnimal(5);
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spEliminarAnimal({a.Id});");
+            contenedor.Entry(a).State = EntityState.Deleted;
+            contenedor.Entry(a).Reload();
             contenedor.SaveChanges();
         }
         private Habitat HayCapacidadEnHabitat(Animal a)

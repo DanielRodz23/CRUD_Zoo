@@ -29,7 +29,6 @@ namespace CRUD_Zoo.Catalogos
                 contenedor.SaveChanges();
             }
         }
-
         public Habitat? GetHabitatXId(int id)
         {
             return contenedor.Habitat.FirstOrDefault(x=>x.Id==id);
@@ -45,6 +44,7 @@ namespace CRUD_Zoo.Catalogos
             contenedor.Habitat.Remove(a);
             contenedor.SaveChanges();
         }
+        
         public bool Validar(Habitat a, out List<string> lista)
         {
             lista = new List<string>();
@@ -68,7 +68,6 @@ namespace CRUD_Zoo.Catalogos
                     lista.Add("El tamaño no puede quedar vacío");
                 if (a.Tamano == 0)
                     lista.Add("El valor de tamaño no puede ser 0");
-
             }
             return lista.Count == 0;
         }

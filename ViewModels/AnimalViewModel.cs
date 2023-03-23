@@ -128,7 +128,7 @@ namespace CRUD_Zoo.ViewModels
             {
                 animalCatalogo.Create(Animal);
                 //ActualizarTablaHabitat();
-                habitatCatalogo.ActualizaHabitat(Animal.IdHabitat);
+                //habitatCatalogo.ActualizaHabitat(Animal.IdHabitat);
                 Regresar();
             }
             else
