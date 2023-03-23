@@ -64,6 +64,7 @@ namespace CRUD_Zoo.ViewModels
 
         private void DeshacerFiltro()
         {
+            Habitat = null;
             CargarAnimales();
             Actualizar();
         }
@@ -151,13 +152,17 @@ namespace CRUD_Zoo.ViewModels
 
         private void VerAnimalesXHabitat()
         {
-            listaanimales.Clear();
-            var proye = animalCatalogo.GetAnimalesXHabitat(Habitat);
-            foreach (var item in proye)
+            if (Habitat!=null)
             {
-                listaanimales.Add(item);
+                var proye = animalCatalogo.GetAnimalesXHabitat(Habitat);
+                listaanimales.Clear();
+                foreach (var item in proye)
+                {
+                    listaanimales.Add(item);
+                }
+                Actualizar();
             }
-            Actualizar();
+            
         }
 
         private void Actualizar(string? property = null)
