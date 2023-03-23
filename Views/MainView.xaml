@@ -29,7 +29,8 @@
         <WrapPanel DockPanel.Dock="Top">
             <TextBlock Width="240" HorizontalAlignment="Left" Foreground="#483838" DockPanel.Dock="Top" Height="50" FontWeight="Bold" FontSize="40"  Margin="30,-10,-10,0">Central Park</TextBlock>
             <Image Margin="-100,-13,0,0" HorizontalAlignment="Right" Source="/Assets/Lianas.png" Height="70" Width="80"></Image>
-            <Image Height="70"  Margin="500,-8,0,0" Source="/Assets/Lianas_Techo.png"></Image>
+            <Image Source="/Assets/Lianas_Superiores.png" Margin="150,0,0,0" Height="60"></Image>
+            <Image Height="70"  Margin="180,-8,0,0" Source="/Assets/Lianas_Techo.png"></Image>
         </WrapPanel>
         <StackPanel Margin="5,25,5,0" DockPanel.Dock="Left">
             <StackPanel>
@@ -39,7 +40,7 @@
                         <Label Foreground="#483838" Margin="0,-12,0,0" FontSize="15" HorizontalAlignment="Center" FontWeight="SemiBold">Animales</Label>
 
                     </StackPanel>
-                    
+
                 </Button>
             </StackPanel>
             <StackPanel Margin="0,30,0,0">
@@ -60,7 +61,6 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        
         <ContentControl Content="{Binding ViewModelActual}">
         </ContentControl>
     </DockPanel>
