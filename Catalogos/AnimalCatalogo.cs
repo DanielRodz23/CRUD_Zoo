@@ -55,28 +55,28 @@ namespace CRUD_Zoo.Catalogos
                 if (a.Nombre is not null)
                 {
                     if (!Regex.IsMatch(a.Nombre, patron))
-                        lista.Add("El nombre solo debe contener letras y/o espacios");
+                        lista.Add("El nombre solo debe contener letras y/o espacios.");
                 }
                 var hab = HayCapacidadEnHabitat(a);
                 if (hab != null)
                 {
                     if (hab.Capacidad == 0)
-                        lista.Add($"No hay capacidad en el habitat: {hab.Nombre}");
+                        lista.Add($"No hay capacidad en el hábitat: {hab.Nombre}.");
                 }
                 if (string.IsNullOrWhiteSpace(a.Nombre))
-                    lista.Add("El nombre no puede quedar vacío");
+                    lista.Add("Debe escribir algún nombre para el animal.");
                 if (a.IdHabitat == null)
-                    lista.Add("El debe elegir un hábitat");
+                    lista.Add("Se debe elegir un hábitat para el animal.");
                 if (string.IsNullOrWhiteSpace(a.NivelPeligroDeExtincion))
-                    lista.Add("Debe elegir la amenaza de extinción que corre el animal");
+                    lista.Add("Debe elegir el nivel de amenaza de extinción que corre el animal.");
                 if (a.Peso is null)
-                    lista.Add("El peso no debe quedar vacío");
+                    lista.Add("Debe escribir el peso del animal.");
                 if (a.Peso ==0)
-                    lista.Add("El peso no debe quedar en 0");
+                    lista.Add("Un animal debe pesar más de 0 kg.");
                 if (string.IsNullOrWhiteSpace(a.TipoAlimentacion))
-                    lista.Add("El tipo de alumentación no puede quedar vacío");
+                    lista.Add("Debe escribir el tipo de alimentación del animal.");
                 if (a.IdHabitat == 0)
-                    lista.Add("El campo de habitat no puede quedar sin seleccionar");
+                    lista.Add("Debe elegir algún hábitat para el animal.");
             }
             return lista.Count == 0;
         }

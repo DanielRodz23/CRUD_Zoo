@@ -12,7 +12,7 @@
         </Border>
         <WrapPanel HorizontalAlignment="Center">
             <Image Width="60" VerticalAlignment="Center" Margin="10,0,-5,40" Source="/Assets/Advertencia.png"></Image>
-        <TextBlock  FontSize="25" Margin="0,20,0,60" Padding="10" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap">¿Estas seguro que deseas eliminar al animal <Run Text="{Binding Animal.Nombre}"></Run><Run>?</Run></TextBlock>
+        <TextBlock  FontSize="25" Margin="0,20,0,60" Padding="10" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap">¿Estás seguro de que deseas eliminar al animal <Run Text="{Binding Animal.Nombre}"></Run><Run>?</Run></TextBlock>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" Margin="0,20,0,0">
             <Button Command="{Binding EliminarAnimalCommand}" Background="Transparent" BorderThickness="0" Height="70" Margin="0,0,20,0">

@@ -54,20 +54,20 @@ namespace CRUD_Zoo.Catalogos
                 if (a.Nombre is not null)
                 {
                     if (!Regex.IsMatch(a.Nombre, patron))
-                        lista.Add("El nombre solo debe contener letras y/o espacios");
+                        lista.Add("El nombre solo debe contener letras y/o espacios.");
                 }
                 if (string.IsNullOrWhiteSpace(a.Nombre))
-                    lista.Add("El nombre no puede quedar vacío");
+                    lista.Add("Debe escribir el nombre del hábitat.");
                 if (string.IsNullOrWhiteSpace(a.TipoHabitat))
-                    lista.Add("El tipo de hábitat no puede quedar vacío");
+                    lista.Add("Debe escoger el tipo de hábitat.");
                 if (a.Capacidad == 0)
-                    lista.Add("La capacidad no puede ser 0 o quedar vacía");
+                    lista.Add("La capacidad debe ser mayor a 1.");
                 if (string.IsNullOrWhiteSpace(a.Vegetacion))
-                    lista.Add("La vegetación no puede quedar vacía");
+                    lista.Add("Debe escribir la vegetación del hábitat.");
                 if (a.Tamano is null)
-                    lista.Add("El tamaño no puede quedar vacío");
+                    lista.Add("Debe escribir el tamaño del hábitat.");
                 if (a.Tamano == 0)
-                    lista.Add("El valor de tamaño no puede ser 0");
+                    lista.Add("El tamaño del hábitat debe ser mayor a 0");
             }
             return lista.Count == 0;
         }
