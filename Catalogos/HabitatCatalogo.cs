@@ -53,7 +53,7 @@ namespace CRUD_Zoo.Catalogos
                 string patron = @"^[a-zA-ZñÑ\s]+$";
                 if (a.Nombre is not null)
                 {
-                    if (!Regex.IsMatch(a.Nombre, patron))
+                    if (!Regex.IsMatch(a.Nombre, patron) && a.Nombre !="")
                         lista.Add("El nombre solo debe contener letras y/o espacios.");
                 }
                 if (string.IsNullOrWhiteSpace(a.Nombre))
@@ -61,7 +61,7 @@ namespace CRUD_Zoo.Catalogos
                 if (string.IsNullOrWhiteSpace(a.TipoHabitat))
                     lista.Add("Debe escoger el tipo de hábitat.");
                 if (a.Capacidad == 0)
-                    lista.Add("La capacidad debe ser mayor a 1.");
+                    lista.Add("La capacidad del hábitat debe ser mayor a 1.");
                 if (string.IsNullOrWhiteSpace(a.Vegetacion))
                     lista.Add("Debe escribir la vegetación del hábitat.");
                 if (a.Tamano is null)

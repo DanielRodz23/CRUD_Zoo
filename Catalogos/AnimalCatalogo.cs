@@ -54,17 +54,18 @@ namespace CRUD_Zoo.Catalogos
                 string patron = @"^[a-zA-ZñÑ\s]+$";
                 if (a.Nombre is not null)
                 {
-                    if (!Regex.IsMatch(a.Nombre, patron))
+                    if (!Regex.IsMatch(a.Nombre, patron) && a.Nombre!="")
                         lista.Add("El nombre solo debe contener letras y/o espacios.");
                 }
+                if (string.IsNullOrWhiteSpace(a.Nombre))
+                  lista.Add("Debe escribir algún nombre para el animal.");
+                 
                 var hab = HayCapacidadEnHabitat(a);
                 if (hab != null)
                 {
                     if (hab.Capacidad == 0)
                         lista.Add($"No hay capacidad en el hábitat: {hab.Nombre}.");
                 }
-                if (string.IsNullOrWhiteSpace(a.Nombre))
-                    lista.Add("Debe escribir algún nombre para el animal.");
                 if (a.IdHabitat == null)
                     lista.Add("Se debe elegir un hábitat para el animal.");
                 if (string.IsNullOrWhiteSpace(a.NivelPeligroDeExtincion))
