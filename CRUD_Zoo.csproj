@@ -24,6 +24,7 @@
     <None Remove="Assets\SalirPrincipal.png" />
     <None Remove="Assets\VerAnimales.png" />
     <None Remove="Assets\VerHabitats.png" />
+    <None Remove="SQL script\Zoologico.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -85,6 +86,7 @@
     <Resource Include="Assets\VerHabitats.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="SQL script\Zoologico.sql" />
   </ItemGroup>
 
 </Project>
