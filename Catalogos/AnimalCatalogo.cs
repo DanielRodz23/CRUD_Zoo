@@ -31,6 +31,7 @@ namespace CRUD_Zoo.Catalogos
         {
             
             contenedor.Database.ExecuteSqlRaw($"call zoologico.spAgregarAnimal({a.IdHabitat}, '{a.Nombre}', {a.Peso}, '{a.TipoAlimentacion}', '{a.NivelPeligroDeExtincion}');");
+            contenedor.Entry(a).State= EntityState.Modified;
             contenedor.Entry(a).Reload();
             contenedor.SaveChanges();
         }
@@ -44,6 +45,7 @@ namespace CRUD_Zoo.Catalogos
         }
         private Habitat HayCapacidadEnHabitat(Animal a)
         {
+            contenedor.Entry(a).Reload();
             return contenedor.Habitat.Where(x => x.Id == a.IdHabitat).FirstOrDefault();
         }
         public bool Validar(Animal a, out List<string> lista)
