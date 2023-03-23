@@ -16,6 +16,7 @@ namespace CRUD_Zoo.ViewModels
 {
     public class AnimalViewModel : INotifyPropertyChanged
     {
+        public Dictionary<int,int> diccionariohabitats { get; set; } = new Dictionary<int,int>();
         //Catalogos
         HabitatCatalogo habitatCatalogo = new HabitatCatalogo();
         AnimalCatalogo animalCatalogo = new AnimalCatalogo();
@@ -52,7 +53,7 @@ namespace CRUD_Zoo.ViewModels
         public AnimalViewModel()
         {
             CargarAnimales();
-            CargarHabitats();
+            LlenarDiccionario();
             FiltrarAnimalesPorHabitatCommand = new RelayCommand(VerAnimalesXHabitat);
             VerAgregarAnimalCommand = new RelayCommand(VerAgregarAnimal);
             AgregarAnimalCommand = new RelayCommand(AgregarAnimal);
@@ -60,6 +61,15 @@ namespace CRUD_Zoo.ViewModels
             EliminarAnimalCommand = new RelayCommand(EliminarAnimal);
             RegresarCommand = new RelayCommand(Regresar);
             DeshacerFiltroCommand = new RelayCommand(DeshacerFiltro);
+        }
+
+        void LlenarDiccionario()
+        {
+            CargarHabitats();
+            foreach (var item in listahabitats)
+            {
+                diccionariohabitats.Add(item.Id, item.Capacidad);
+            }
         }
 
         private void DeshacerFiltro()
@@ -98,6 +108,7 @@ namespace CRUD_Zoo.ViewModels
         {
             if (Animal is not null)
             {
+                diccionariohabitats[Animal.IdHabitat]++;
                 animalCatalogo.Delete(Animal);
                 CargarAnimales();
                 Regresar();
@@ -127,10 +138,20 @@ namespace CRUD_Zoo.ViewModels
             Error = "";
             if (animalCatalogo.Validar(Animal, out List<string> lista))
             {
-                animalCatalogo.Create(Animal);
-                //ActualizarTablaHabitat();
-                //habitatCatalogo.ActualizaHabitat(Animal.IdHabitat);
-                Regresar();
+                if (diccionariohabitats[Habitat.Id]==0)
+                {
+                    Error = $"Habitat lleno {Environment.NewLine}";
+                    Actualizar();
+                }
+                else
+                {
+                    animalCatalogo.Create(Animal);
+                    //ActualizarTablaHabitat();
+                    //habitatCatalogo.ActualizaHabitat(Animal.IdHabitat);
+                    diccionariohabitats[Habitat.Id]--;
+                    Regresar();
+                }
+                
             }
             else
             {

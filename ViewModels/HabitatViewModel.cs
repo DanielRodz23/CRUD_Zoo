@@ -67,8 +67,11 @@ namespace CRUD_Zoo.ViewModels
         private void VerEliminar(int id)
         {
             Habitat = catalogo.GetHabitatXId(id);
-            Operacion = Accion.EliminarHabitats;
-            Actualizar();
+            if (Habitat != null)
+            {
+                Operacion = Accion.EliminarHabitats;
+                Actualizar();
+            }
         }
 
         private void Regresar()
@@ -83,7 +86,11 @@ namespace CRUD_Zoo.ViewModels
             if (catalogo.Validar(Habitat, out List<string> lista))
             {
                 catalogo.Create(Habitat);
+
                 CargarHabitats();
+                var dict = catalogo.GetUltimoAgregado();
+                AnimalViewModel animal= new AnimalViewModel();
+                animal.diccionariohabitats.Add(dict.Id,dict.Capacidad);
                 Regresar();
             }
             else

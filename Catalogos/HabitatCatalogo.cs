@@ -13,6 +13,11 @@ namespace CRUD_Zoo.Catalogos
     {
         ZoologicoContext contenedor = new ZoologicoContext();
 
+        public Habitat GetUltimoAgregado()
+        {
+            return contenedor.Habitat.OrderByDescending(x=>x.Id).FirstOrDefault();
+        }
+
         public IEnumerable<Habitat> GetAllHabitats()
         {
             var a= contenedor.Habitat.Include(x=>x.Animal).OrderBy(x => x.Nombre);
