@@ -18,9 +18,9 @@
     <None Remove="Assets\Guardar.png" />
     <None Remove="Assets\HabitatPrincipal.png" />
     <None Remove="Assets\Lianas.png" />
+    <None Remove="Assets\Lianas_Laterales.png" />
     <None Remove="Assets\Lianas_Superiores.png" />
     <None Remove="Assets\Lianas_Techo.png" />
-    <None Remove="Assets\Liana_Lateral.png" />
     <None Remove="Assets\Salir.png" />
     <None Remove="Assets\SalirPrincipal.png" />
     <None Remove="Assets\VerAnimales.png" />
@@ -68,13 +68,13 @@
     <Resource Include="Assets\Lianas.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Lianas_Laterales.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Lianas_Superiores.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Lianas_Techo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Liana_Lateral.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Salir.png">
